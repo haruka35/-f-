@@ -1,0 +1,669 @@
+@charset "UTF-8";
+
+/*すべてのWebページに適用される*/
+html{
+	font-family: ;
+}
+
+html *{
+	box-sizing: border-box; /*スマホ対応のために記述 コンテンツ幅をボーダー領域まで高さ・幅設定してくれる*/
+
+}
+
+
+* {
+	margin:0; padding:0; /*全要素のマージン・パディングをリセット*/
+}
+
+body{
+	background-color: #ffffff;
+	margin: 0 0 0 0;/*body（ページ全体）に最初少し幅があるので、余白をなくす為に書く*/
+}
+
+.wrapper{
+	text-align: center;
+	margin: 0 0 0 0;
+}
+
+h3{
+	color: #3c454d;
+	font-size: 30px;
+	height: 80px;
+	padding-top: 22px;
+	border-radius:20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h3::before,h3::after{
+	content: '';
+	width: 100px;
+	height: 1px;
+	background-color: #3c454d;
+}
+
+h3::before{ margin-right: 20px;}
+h3::after{ margin-left: 20px;}
+
+p {
+	font-size: 15px;
+}
+
+main{
+	margin-top: 130px;
+}
+
+
+
+
+/*リンクを押すときの変化・疑似クラスの設定（順番変えない）　スマホの場合はリンクとアクティブのみ適応される*/
+a:link{
+	color: #d25833;　/*href属性が設定されている（＜a＞タグ）*/
+}
+
+a:visited{
+	color: #d25833;　/*リンク先が訪問済みの時色変える*/
+}
+
+a:hover{
+	color: #e3937a;　/*カーソル乗せたときに色変える*/
+}
+
+a:active{
+	color: #ff6a3b;　/*押した瞬間に色変える*/
+}
+
+img{
+	max-width: 100%;
+	height: auto; /*heightはなくてもいい*/
+}
+
+/*すべてのページに適用　（ヘッダー）*/
+.head{
+	background-color: #ffffff;
+	display: flex;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+}
+
+.logo{
+	display: flex;
+	flex: auto;
+	justify-content: flex-start;
+	padding-left: 80px;
+	padding-right: 50px;
+	padding-top: 20px;
+}
+
+.logo img{
+	width: 100px;
+	height: 100px;
+	flex: auto;
+}
+
+.logo h4{
+	display: inline-block;
+	padding-top: 8px;
+	padding-right: 110px;
+	color: #3c454d;
+
+}
+
+.nav{
+	margin-top: 60px;
+	margin-right: 70px;
+	padding-bottom: 10px;
+	padding-top: 30px;
+}
+
+.nav li{
+	flex: auto;
+	display: inline; /*ブロック要素をインライン要素に変更して、横並びにする*/
+	list-style-type: none; /*ナビゲーションの黒丸なくす（インライン要素にすると勝手に黒丸消えるが、スマホ対応用に書く*/
+	padding-right: 30px;
+}
+
+.nav ul{
+	flex: auto;
+}
+
+/*cssは同じタグ書いたら、後に書いたほうが適用される*/
+/*a:linkよりも対象を絞り込んでいる*/
+.nav a:link{
+	color: #3c454d;
+	text-decoration: none; /*ナビゲーションリンクの下線を消す*/
+}
+
+.nav a:visited{
+	color: #3c454d;
+	text-decoration: none;
+}
+
+.nav a:hover{
+	color: #7d8dac;
+	text-decoration: none;
+}
+
+.nav a:activ{
+	color: #5a9bc0;
+	text-decoration: none;
+}
+
+/*すべの手のページに適応（フッター）*/
+.footer{
+	font-size: 15px;
+	background-color: #fff;
+}
+
+.footer p{
+	font-size: 12px;
+}
+
+.pattern-01{
+	  list-style-type: none;
+	  display: flex;
+	  padding-left: 10px;
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+}
+
+.copyright{
+	background-color: #ffffff;
+	margin: 10px 200px;
+	background-color: #eaeea2;
+}
+
+.copyright img{
+	width: 90px;
+	height: 90px;
+	margin-left: 100px;
+	margin-top: 10px;
+}
+
+.copyright p{
+	margin-left: 10px;
+	padding-top: 30px;
+}
+
+.sns{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+}
+
+.sns p{
+	padding-top: 30px;
+	font-size: 18px;
+}
+
+.icon-wrap{
+	margin-right: 10px;
+}
+
+ /*snsアイコンの色が変わる*/
+.pattern-01 .icon-wrap {
+    display: block;
+	color: black;
+	
+}
+ 
+.pattern-01 .icon-wrap:hover.icon-wrap-facebook {
+    color: #1877f2;
+}
+
+.pattern-01 .icon-wrap:hover.icon-wrap-instagram {
+    color: #c71585;
+}
+
+
+/*個別のスタイル*/
+/*index.html*/
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+}
+
+.slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:480px;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8);/*左右の画像のサイズを80%に*/
+  transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+  transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+  opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+  margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+  margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+
+
+h2,p {
+    text-align:center;
+    padding:20px;
+}
+
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  color: #333;
+}
+
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+
+
+/*about.html*/
+.container p{
+	line-height: 2.5em;
+	margin: 20px 0;
+}
+
+.sub{
+	background-color: #f9f7f4;
+	padding-bottom: 30px;
+	padding-top: 60px;
+}
+
+.consept{
+	display: flex;
+	margin-top: 60px;
+	margin-bottom: 50px;
+	justify-content: center;
+}
+
+.consept img{
+	width: 400px;
+	height: 300px;
+	object-fit: cover;
+}
+
+.sub-consept img{
+	width: 600px;
+	height: 300px;
+	object-fit: cover;
+}
+
+.consept-text{
+	display: flex;
+	justify-content: center;
+	padding-bottom: 30px;
+	/*アニメーションの指定*/
+	 animation: SlideIn 4.0s;
+}
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.consept-text p{
+	text-align: left;
+	margin-left: 100px;
+}
+
+.consept-text h4{
+	align-self: center;
+	padding-right: 110px;
+	font-size: 20px;
+	color: #3c454d;
+	border-left: thick solid #ea5549;
+  	padding-left: 10px;
+}
+}
+
+.sub-consept{
+	display: flex;
+	margin-top: 80px;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.subconsept-text p{
+	margin-top: 20px;
+	text-align: left;
+	display: inline-block;
+	margin-left: 330px;
+
+}
+.consept h3{
+	padding-top: 50px;
+
+}
+
+.subconsept-text {
+	margin: 16px auto;
+	text-align: center;
+	display: block;
+	 animation: SlideIn 4.0s;
+	 animation-delay: 3.0s;
+}
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*menu.html*/
+.menu-block h4{
+	font-size: 28px;
+	padding-top: 60px;
+	margin-top: 20px;
+	padding-bottom: 40px;
+	color: #3c454d
+}
+
+.menu-block h5{
+	font-size: 17px;
+	margin-bottom: 5px;
+}
+
+.lunchi{
+	margin-bottom: 40px;
+}
+
+.dinner{
+	padding-bottom: 50px;
+}
+
+.menu-block{
+	margin-bottom: 20px;
+	background-color: #f9f7f4;
+}
+
+hr{
+	border: 0;
+	height: 7px;
+	background-image: 
+		repeating-linear-gradient(45deg,#ccc 0,#ccc,1px,rgba(0 0 0 / 0)0,rgba(0 0 0 / 0)50%),
+		repeating-linear-gradient(135deg,#ccc 0,#ccc,1px,rgba(0 0 0 / 0)0,rgba(0 0 0 / 0)50%);
+	background-size: 7px 7px;
+	background-position: bottom-center;
+	background-repeat: repeat-x;
+
+
+}
+.menu-item{
+	width: 800px;
+	display: flex; /*このボックスに入ってる子要素が横並びになる*/
+	padding: 20px 8px;
+	margin: 40px auto 0px auto;
+}
+
+.menu-photo{
+	
+	flex: 1 1 auto; /*　幅を伸縮させたいなら、１　１　auto　とかく*/
+}
+
+.menu-photo img{
+	box-shadow: 10px 10px 0 #d3d3d3;
+}
+
+.menu-text{
+	flex: 0 0 336px;/*幅を固定させたいなら、０　０　固定幅　と書く*/
+	line-height: 1.8em;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 20px;
+}
+/*acces.html*/
+/*テーブル*/
+/*テーブルにはmargin設定使えるが、テーブルの中のth,tdにはmarginはないので適用されない　paddingを使う*/
+table{
+	margin : 40px auto;
+	padding-bottom: 50px;
+	padding-top: 30px;
+}
+
+/*.access-wrapper{
+	margin: 0 auto 0 auto ;
+
+}*/
+
+.info th,.info td{
+	padding: 8px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.info th{
+	width: 90px;
+	color: #3c454d;
+	text-align: left;
+	vertical-align: top; /*縦方向の値を上につける*/
+}
+
+.access-map{
+	margin-top: 40px;
+	padding-top: 50px;
+}
+
+.access{
+	background-color: #f9f7f4;
+}
+
+
+/*reservation*/
+.top-text{
+	margin-bottom: 40px
+}
+form div{
+	padding: 12px;
+}
+
+select{
+	width: 30em;
+}
+
+input [name="subuject"]{
+	width: 30em;
+}
+
+textarea{
+	width: 30em;
+	height: 6em;
+}
+
+input [type="submit"]{
+	margin: 20px 0;
+	width: 30em;
+}
+
+form{
+	background-color: #f9f7f4;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 20%;          /* 角丸       */
+  font-size     : 14pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 10px 24px;   /* 余白       */
+  background    : #bd6856;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;           /* 透明度     */
+  transition    : .3s;         /* なめらか変化 */
+}
+.button:hover {
+  opacity       : 0.8;         /* カーソル時透明度 */
+}
+
+/*スマートフォン向けCSS*/
+@media (max-width: 767px) {
+	/*全体ーナビゲーション*/
+	body{
+		padding-top: 200px;
+	}
+
+	.head{display: block;
+	}
+
+	.logo{
+		display: block;
+		padding: 20px 0;
+	}
+	.logo img{
+		width: 20vw;
+		height: auto;
+	}
+	
+	.nav{
+		margin: auto;
+		padding-top: 0;
+	}	
+
+	.nav li{
+		display: block;
+	}
+
+	.h3{
+		margin-top: 300px;
+	}
+
+	/*index.html*/
+	.keyvisual img{
+		width: 100vw;
+
+	} 
+
+	/*about.html*/
+	.consept{
+		display: block;
+	}
+
+	.consept img{
+		width: 100%;
+	}
+
+	.container p{
+		margin: auto;
+	}
+
+	.consept-text br{
+		display: none;
+	}
+
+	.subconsept-text br{
+		display: none;
+	}
+
+	/*menu.html 横並び解除*/
+	.menu-item{
+		display: block;
+		width: auto;
+	}
+
+	.menu-photo img{
+		width: 100vw;
+		height: auto;
+	}
+
+	.menu-text{
+		width: 100%;
+	}
+
+
+	/*contact.html フォーム*/
+	select{
+		width: 100%;
+	}
+
+	input[name="subject"]{
+		width: 100%;
+	}
+
+	textarea{
+		width: 100%;
+	}
+
+	input[type="submit"]{
+		margin: 20px 0;
+		width: 100%;
+	}
+

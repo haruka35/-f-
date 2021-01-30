@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隠れやフレンチ-f-</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+        <!--ヘッダー-->
+        <header>
+            <div class="head">
+                <div class="logo">
+                    <a href="index.html"><img src="images/IMG_8125.jpg" alt="resutaurantf_icon"></a>
+
+                </div>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="menu.html">MENU</a></li>
+                            <li><a href="acces.html">ACCESS</a></li>
+                            <li><a href="reservation.html">RESERVATIONS</a></li>
+                        </ul>
+                    </nav>
+                <!--<p><a href="reservation.html">RESERVATIONS</a></p>-->
+            </div>
+        </header>
+        <!--ここまでヘッダー-->
+        <!--メイン-->
+        <main>
+            <div class="top-text">
+                <h3>RESERVATIONS</h3>
+            </div>
+            <form method="GET" action="result.html"> <!--methotはデータの送信方式の指定、actionは送り先の指定-->
+                <div>
+                    <label for="kind">お問い合わせの種類</label><br>
+                    <select id="kind" name="kind">
+                        <option value="reservation">ご予約</option> <!--valueの名前で送信する-->
+                        <option value="contact">その他のお問合せ</option>
+                    </select>
+                </div>
+                <div>
+                    隠れやフレンチ-f-にご来店いただいたことはありますか。<br>
+                    <!--typeはボタンの種類　valueはプログラムのほうで送られてくる項目情報　checkedは初めからチェックがどちらかについてるように指定している
+                        name属性は同じ名前にすること-->
+                    <label><input type="radio" name="first" value="yes" checked=>はい</label>　<!--inputは空要素なので終了タグ無し-->
+                    <label><input type="radio" name="first" value="no">いいえ</label>
+                </div>
+                <div>
+                    当店をお知りになったきっかけは？<br>
+                    <!--checkboxは複数回答できる-->
+                    <label><input type="checkbox" name="how" value="friends">知り合いの紹介で</label>
+                    <label><input type="checkbox" name="how" value="magazine">雑誌・Webサイトで見て</label>
+                </div>
+                <div>
+                    <label>お問い合わせの件名<br>
+                    <!--textボタンは件名などの改行の必要のない短いテキストいれるときに使う　placeholderは書き方の見本入れておく（ユーザーが文字打つと消える）-->
+                    <input type="text" name="subject" placeholder="お問い合わせ"></label>
+                </div>
+                <div>
+                    <label>お問い合わせの具体的な内容<br>
+                    <textarea name="message"></textarea></label>
+                </div>
+                <div>
+                    <input type="submit" name="submit" value="送信" class="button"> <!--valueはボタンに出る文字-->
+                </div>
+            </form>
+        </main>
+        <!--ここまでメイン-->
+        <!--ここからフッター-->
+        <footer>
+            <div class="footer">        
+                <div class="sns">
+                    <p>Follow Us:</p>
+                    <ul class="pattern-01">
+                        <li>
+                            <a href="https://www.facebook.com/%E9%9A%A0%E3%82%8C%E5%AE%B6%E3%83%95%E3%83%AC%E3%83%B3%E3%83%81-f--889579371183499/" class="icon-wrap icon-wrap-facebook"><i class="fab fa-facebook fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/restaurant_f_/?hl=ja" class="icon-wrap icon-wrap-instagram"><i class="fab fa-instagram fa-3x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <p>&copy;Copyright resutaurant-f-. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
